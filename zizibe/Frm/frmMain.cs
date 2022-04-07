@@ -30,8 +30,6 @@ namespace zizibe.Form
         {
             InitializeComponent();
             TabInit();
-
-            
         }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -76,7 +74,7 @@ namespace zizibe.Form
                         t.isDoc = false;
                         break;
                     case "Connect":
-                        ucConnect ucConnect = new ucConnect();
+                        ucConnect ucConnect = new ucConnect(this);
                         t.ctr = ucConnect;
                         t.dockStyle = DockingStyle.Fill;
                         t.isDoc = true;

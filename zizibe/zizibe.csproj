@@ -56,10 +56,10 @@
     <Compile Include="Common\Memory.cs" />
     <Compile Include="Common\Structs.cs" />
     <Compile Include="ETC\CenterDialog.cs" />
-    <Compile Include="Form\frmMain.cs">
+    <Compile Include="Frm\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmMain.Designer.cs">
+    <Compile Include="Frm\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Uc\ucConnect.Designer.cs">
       <DependentUpon>ucConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uc\ucConnectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc\ucConnectView.Designer.cs">
+      <DependentUpon>ucConnectView.cs</DependentUpon>
     </Compile>
     <Compile Include="Uc\ucLogs.cs">
       <SubType>UserControl</SubType>
@@ -82,7 +88,7 @@
     <Compile Include="Uc\ucTelegram.Designer.cs">
       <DependentUpon>ucTelegram.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\frmMain.resx">
+    <EmbeddedResource Include="Frm\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Uc\ucConnect.resx">
       <DependentUpon>ucConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc\ucConnectView.resx">
+      <DependentUpon>ucConnectView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uc\ucLogs.resx">
       <DependentUpon>ucLogs.cs</DependentUpon>

@@ -3,6 +3,7 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using DevExpress.XtraEditors;
 
 class CenterWinDialog : IDisposable
 {
@@ -14,8 +15,6 @@ class CenterWinDialog : IDisposable
         mOwner = owner;
         owner.BeginInvoke(new MethodInvoker(findDialog));
     }
-
-
 
     private void findDialog()
     {
