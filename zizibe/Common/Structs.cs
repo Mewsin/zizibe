@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,5 +18,16 @@ namespace zizibe.Common
         public bool isDoc = false;
         public bool isDefaultOpen = false;
         public bool isCloseBtn = true;
+        
     }
+
+    public class AppInfo
+    {
+        public int idx = 0;
+        public IntPtr hWnd = IntPtr.Zero;
+        public int pID = 0;
+        public string Name = "";
+        public Bitmap Capture = null;
+    }
+ 
 }

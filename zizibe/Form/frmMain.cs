@@ -35,14 +35,17 @@ namespace zizibe.Form
         }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to exit?", "Mewsin", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            using (new CenterWinDialog(this))
             {
-                TabLayoutSave();
-                e.Cancel = false;
-            }
-            else
-            {
-                e.Cancel = true;
+                if (MessageBox.Show("Are you sure you want to exit?", "Mewsin", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    TabLayoutSave();
+                    e.Cancel = false;
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -50,7 +53,7 @@ namespace zizibe.Form
         {
             string[] tabs = new string[]
             {
-                "Telegram", "Log"
+                "Telegram", "Log", "Connect"
             };
 
             foreach (string tabName in tabs)
@@ -72,7 +75,12 @@ namespace zizibe.Form
                         t.dockStyle = DockingStyle.Bottom;
                         t.isDoc = false;
                         break;
-
+                    case "Connect":
+                        ucConnect ucConnect = new ucConnect();
+                        t.ctr = ucConnect;
+                        t.dockStyle = DockingStyle.Fill;
+                        t.isDoc = true;
+                        break;
                     default:
                         break;
                 }
@@ -172,6 +180,11 @@ namespace zizibe.Form
             }
         }
         private void bbtnLog_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            TabADD(e.Item.Tag.ToString());
+        }
+
+        private void bbtnConnect_ItemClick(object sender, ItemClickEventArgs e)
         {
             TabADD(e.Item.Tag.ToString());
         }

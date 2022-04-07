@@ -40,16 +40,16 @@ namespace zizibe.Form
             this.bbtnSetting = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnTelegram = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnLog = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbtnLog = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
@@ -86,6 +86,8 @@ namespace zizibe.Form
             this.bbtnConnect.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbtnConnect.ImageOptions.Image")));
             this.bbtnConnect.Name = "bbtnConnect";
             this.bbtnConnect.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bbtnConnect.Tag = "Connect";
+            this.bbtnConnect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnConnect_ItemClick);
             // 
             // bbtnDisconnect
             // 
@@ -149,6 +151,16 @@ namespace zizibe.Form
             this.barButtonItem1.ImageOptions.Image = global::zizibe.Properties.Resources.monitoring;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // bbtnLog
+            // 
+            this.bbtnLog.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.bbtnLog.Caption = "Log";
+            this.bbtnLog.Id = 10;
+            this.bbtnLog.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbtnLog.ImageOptions.SvgImage")));
+            this.bbtnLog.Name = "bbtnLog";
+            this.bbtnLog.Tag = "Log";
+            this.bbtnLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnLog_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -179,6 +191,11 @@ namespace zizibe.Form
             this.ribbonPageGroup3.ItemLinks.Add(this.bbtnTelegram);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.bbtnLog);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonStatusBar
             // 
@@ -212,21 +229,6 @@ namespace zizibe.Form
             this.documentManager.View = this.tabbedView1;
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.bbtnLog);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            // 
-            // bbtnLog
-            // 
-            this.bbtnLog.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.bbtnLog.Caption = "Log";
-            this.bbtnLog.Id = 10;
-            this.bbtnLog.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.bbtnLog.Name = "bbtnLog";
-            this.bbtnLog.Tag = "Log";
-            this.bbtnLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnLog_ItemClick);
             // 
             // frmMain
             // 
