@@ -52,6 +52,8 @@ namespace zizibe.Uc
             // lstLog
             // 
             this.lstLog.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.lstLog.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstLog.Appearance.Options.UseFont = true;
             this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstLog.Location = new System.Drawing.Point(3, 3);
             this.lstLog.Name = "lstLog";
@@ -65,6 +67,7 @@ namespace zizibe.Uc
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucLogs";
             this.Size = new System.Drawing.Size(600, 150);
+            this.Load += new System.EventHandler(this.ucLogs_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lstLog)).EndInit();
             this.ResumeLayout(false);

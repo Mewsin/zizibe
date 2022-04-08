@@ -76,7 +76,7 @@ namespace zizibe.Form
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(736, 151);
+            this.ribbon.Size = new System.Drawing.Size(926, 151);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // bbtnConnect
@@ -199,10 +199,10 @@ namespace zizibe.Form
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 594);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 757);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(736, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(926, 23);
             // 
             // dockManager
             // 
@@ -235,7 +235,7 @@ namespace zizibe.Form
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 617);
+            this.ClientSize = new System.Drawing.Size(926, 780);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

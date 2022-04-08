@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using zizibe.Common;
+using zizibe.Work;
 //using zizibe.Form;
 
 namespace zizibe.Uc
@@ -93,31 +94,38 @@ namespace zizibe.Uc
 
                 ucConnectView ucConnectView = new ucConnectView();
                 ucConnectView.lblTitle.Text = _lstAppinfo[lst.SelectedIndex].Name;
-                ucConnectView.idx = 1;
+                ucConnectView.idx = Memory.ConnectControls.Count;
                 ucConnectView.btnDel.Click += BtnDel_Click;
                 ucConnectView.btnDel.Tag = Memory.ConnectControls.Count;
+                ucConnectView.hWnd = _lstAppinfo[lst.SelectedIndex].hWnd;
+                //ucConnectView.Appinfo = _lstAppinfo[lst.SelectedIndex];
 
 
 
-                if (Memory.ConnectControls.Count <= 3)
-                {
-                    foreach (var item in Memory.ConnectControls.Values)
-                    {
-                        if (item.lblTitle.Text == _lstAppinfo[lst.SelectedIndex].Name)
-                        {
-                            MessageBox.Show("이미 추가 된 플레이어 입니다.");
-                            return;
-                        }
-                    }
-                    Memory.ConnectControls.Add(Memory.ConnectControls.Count, ucConnectView);
-                    tblScreen(tp);
-                    lblList.Text = string.Format("추가 된 리스트 ( {0}개 )", Memory.ConnectControls.Count);
-                }
-                else
-                {
-                    MessageBox.Show("4개 이상 추가 할 수 없습니다.");
-                    return;
-                }
+
+                //if (Memory.ConnectControls.Count <= 3)
+                //{
+                //    foreach (var item in Memory.ConnectControls.Values)
+                //    {
+                //        if (item.lblTitle.Text == _lstAppinfo[lst.SelectedIndex].Name)
+                //        {
+                //            MessageBox.Show("이미 추가 된 플레이어 입니다.");
+                //            return;
+                //        }
+                //    }
+                //    Memory.ConnectControls.Add(Memory.ConnectControls.Count, ucConnectView);
+                //    tblScreen(tp);
+                //    lblList.Text = string.Format("추가 된 리스트 ( {0}개 )", Memory.ConnectControls.Count);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("4개 이상 추가 할 수 없습니다.");
+                //    return;
+                //}
+
+                Memory.ConnectControls.Add(Memory.ConnectControls.Count, ucConnectView);
+                tblScreen(tp);
+                lblList.Text = string.Format("추가 된 리스트 ( {0}개 )", Memory.ConnectControls.Count);
             }
         }
 

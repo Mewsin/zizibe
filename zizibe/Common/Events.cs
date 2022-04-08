@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,15 @@ namespace zizibe.Common
         public LogEventArgs(string log)
         {
             _log = log;
+        }
+    }
+    public class CaptureEventArgs : EventArgs
+    {
+        private Bitmap _bmp;
+        public Bitmap Bmp { get { return _bmp; } }
+        public CaptureEventArgs(Bitmap bmp)
+        {
+            _bmp = bmp;
         }
     }
 }

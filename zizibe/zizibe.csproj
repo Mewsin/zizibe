@@ -53,8 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Events.cs" />
+    <Compile Include="Common\Function.cs" />
     <Compile Include="Common\Memory.cs" />
     <Compile Include="Common\Structs.cs" />
+    <Compile Include="Common\WinAPI.cs" />
     <Compile Include="ETC\CenterDialog.cs" />
     <Compile Include="Frm\frmMain.cs">
       <SubType>Form</SubType>
@@ -88,6 +90,7 @@
     <Compile Include="Uc\ucTelegram.Designer.cs">
       <DependentUpon>ucTelegram.cs</DependentUpon>
     </Compile>
+    <Compile Include="Work\Worker.cs" />
     <EmbeddedResource Include="Frm\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
