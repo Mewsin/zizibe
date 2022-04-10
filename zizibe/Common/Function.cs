@@ -9,6 +9,7 @@ namespace zizibe.Common
 {
     public class Function
     {
+        public bool test = false;
         public Bitmap setCapture(IntPtr hWnd)
         {
             GC.Collect();

@@ -18,8 +18,10 @@ namespace zizibe.Uc
         public static event EventHandler<LogEventArgs> OnLog;
 
         public AppInfo _info = new AppInfo();
+
         public int idx { get; set; }
         public IntPtr hWnd { get; set; }
+        public string Name { get; set; }
 
         private bool _isConnect = false;
         public bool isConnect { get { return _isConnect; } }
@@ -30,10 +32,14 @@ namespace zizibe.Uc
 
         private void OnCapture(object sender, CaptureEventArgs e)
         {
-            picView.Invoke((MethodInvoker)(() =>
+            Task t = new Task(() =>
             {
-                picView.Image = e.Bmp;
-            }));
+                picView.Invoke((MethodInvoker)(() =>
+                {
+                    picView.Image = e.Bmp;
+                }));
+            });
+            t.Start();
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -42,21 +48,42 @@ namespace zizibe.Uc
             {
                 btnConnect.Text = "DisConnect";
                 Log(string.Format("<color=purple><b>[{0}]</b></color> 연결 완료", _info.Name));
+
                 ConnectedState(lblConnectState, true);
+
+                SetBtnEnabled(btnStart, true);
+                SetBtnEnabled(btnNowStart, true);
+                SetBtnEnabled(btnStop, false);
 
                 _info.idx = idx;
                 _info.hWnd = hWnd;
+                _info.Name = Name;
 
             }
             else
             {
                 btnConnect.Text = "Connect";
                 Log(string.Format("<color=purple><b>[{0}]</b></color> 연결 해제", _info.Name));
+                
+                btnStop_Click(sender, e);
+
                 ConnectedState(lblConnectState, false);
+
+                SetBtnEnabled(btnStart, false);
+                SetBtnEnabled(btnNowStart, false);
+                SetBtnEnabled(btnStop, false);
+
             }
             //MessageBox.Show(Appinfo.hWnd.ToString()) ;
         }
         
+        private void SetBtnEnabled(SimpleButton btn, bool state)
+        {
+            btn.Invoke((MethodInvoker)(() =>
+            {
+                btn.Enabled = state;
+            }));
+        }
         private void ConnectedState(LabelControl lbl, bool state)
         {
             lbl.Invoke((MethodInvoker)(() =>
@@ -91,11 +118,15 @@ namespace zizibe.Uc
                 _info = new AppInfo();
                 _info.idx = idx;
                 _info.hWnd = hWnd;
+                _info.Name = Name;
+
                 _info.OnCapture += OnCapture;
 
                 _info.Start();
-                btnStart.Enabled = false;
-                btnStop.Enabled = true;
+
+                SetBtnEnabled(btnStart, false);
+                SetBtnEnabled(btnNowStart, false);
+                SetBtnEnabled(btnStop, true);
             }
         }
 
@@ -104,8 +135,10 @@ namespace zizibe.Uc
         {
             _info.OnCapture -= OnCapture;
             _info.Stop();
-            btnStart.Enabled = true;
-            btnStop.Enabled = false;
+            
+            SetBtnEnabled(btnStart, true);
+            SetBtnEnabled(btnNowStart, true);
+            SetBtnEnabled(btnStop, false);
         }
     }
 }
