@@ -49,6 +49,8 @@ namespace zizibe.Uc
                 _lstAppinfo.Add(info);
                 lst.Items.Add(string.Format("{0} | {1}", info.Name, info.pID));
             }
+
+            lst.SelectedIndex = -1;
         }
 
         public void tblScreen(TableLayoutPanel tbl)
@@ -98,6 +100,7 @@ namespace zizibe.Uc
                 ucConnectView.btnDel.Click += BtnDel_Click;
                 ucConnectView.btnDel.Tag = Memory.ConnectControls.Count;
                 ucConnectView.hWnd = _lstAppinfo[lst.SelectedIndex].hWnd;
+                ucConnectView.Name = _lstAppinfo[lst.SelectedIndex].Name;
                 //ucConnectView.Appinfo = _lstAppinfo[lst.SelectedIndex];
 
 

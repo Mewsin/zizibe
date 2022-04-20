@@ -48,6 +48,11 @@ namespace zizibe.Work
                 }
             }
         }
+        private void Log(string log)
+        {
+            string str = string.Format("[{0}] {1}", Name, log);
+            OnLog?.Invoke(this, new LogEventArgs(idx.ToString()));
+        }
 
         public void Start()
         {
@@ -74,7 +79,7 @@ namespace zizibe.Work
             {
                 Bitmap b = setCapture(hWnd);
                 OnCapture?.Invoke(this, new CaptureEventArgs(b));
-                OnLog?.Invoke(this, new LogEventArgs(idx.ToString()));
+                Log(idx.ToString());
                 Thread.Sleep(100);
             }
         }

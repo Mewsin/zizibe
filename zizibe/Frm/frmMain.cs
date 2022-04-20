@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -39,6 +40,8 @@ namespace zizibe.Form
                 {
                     TabLayoutSave();
                     e.Cancel = false;
+                    // 완전히 종료
+                    Process.GetCurrentProcess().Kill();
                 }
                 else
                 {

@@ -46,7 +46,7 @@ namespace zizibe.Uc
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStart = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNowStart = new DevExpress.XtraEditors.SimpleButton();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -163,7 +163,7 @@ namespace zizibe.Uc
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.60298F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.Controls.Add(this.btnStart, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.simpleButton2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnNowStart, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnStop, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.simpleButton4, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 4, 0);
@@ -181,6 +181,7 @@ namespace zizibe.Uc
             this.btnStart.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Appearance.Options.UseFont = true;
             this.btnStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStart.Enabled = false;
             this.btnStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.Image")));
             this.btnStart.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnStart.Location = new System.Drawing.Point(3, 3);
@@ -192,20 +193,21 @@ namespace zizibe.Uc
             this.btnStart.TabIndex = 0;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // simpleButton2
+            // btnNowStart
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(91, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(146, 41);
+            this.btnNowStart.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNowStart.Appearance.Options.UseFont = true;
+            this.btnNowStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNowStart.Enabled = false;
+            this.btnNowStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnNowStart.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnNowStart.Location = new System.Drawing.Point(91, 3);
+            this.btnNowStart.Name = "btnNowStart";
+            this.btnNowStart.Size = new System.Drawing.Size(146, 41);
             toolTipItem2.Text = "사냥터 바로시작";
             superToolTip2.Items.Add(toolTipItem2);
-            this.simpleButton2.SuperTip = superToolTip2;
-            this.simpleButton2.TabIndex = 0;
+            this.btnNowStart.SuperTip = superToolTip2;
+            this.btnNowStart.TabIndex = 0;
             // 
             // btnStop
             // 
@@ -342,7 +344,7 @@ namespace zizibe.Uc
         public DevExpress.XtraEditors.SimpleButton btnDel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.SimpleButton btnStart;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnNowStart;
         private DevExpress.XtraEditors.SimpleButton btnStop;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
