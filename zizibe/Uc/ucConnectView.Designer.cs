@@ -199,7 +199,7 @@ namespace zizibe.Uc
             this.btnNowStart.Appearance.Options.UseFont = true;
             this.btnNowStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNowStart.Enabled = false;
-            this.btnNowStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnNowStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNowStart.ImageOptions.Image")));
             this.btnNowStart.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnNowStart.Location = new System.Drawing.Point(91, 3);
             this.btnNowStart.Name = "btnNowStart";
@@ -323,6 +323,7 @@ namespace zizibe.Uc
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucConnectView";
             this.Size = new System.Drawing.Size(548, 374);
+            this.Load += new System.EventHandler(this.ucConnectView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picView)).EndInit();

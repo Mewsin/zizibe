@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using zizibe.Common;
+using zizibe.ETC;
 
 namespace zizibe.Work
 {
@@ -18,6 +19,8 @@ namespace zizibe.Work
         public IntPtr hWnd = IntPtr.Zero;
         public int pID = 0;
         public string Name = "";
+
+        public Settings Setting;
 
         private static readonly object BitmapLock = new object();
         private static Bitmap _snapshot;
@@ -51,7 +54,7 @@ namespace zizibe.Work
         private void Log(string log)
         {
             string str = string.Format("[{0}] {1}", Name, log);
-            OnLog?.Invoke(this, new LogEventArgs(idx.ToString()));
+            OnLog?.Invoke(this, new LogEventArgs(str.ToString()));
         }
 
         public void Start()
@@ -77,9 +80,15 @@ namespace zizibe.Work
         {
             while (_isRun)
             {
-                Bitmap b = setCapture(hWnd);
-                OnCapture?.Invoke(this, new CaptureEventArgs(b));
-                Log(idx.ToString());
+                Capture = setCapture(hWnd);
+                OnCapture?.Invoke(this, new CaptureEventArgs(Capture));
+
+                LockBitmap lockBitmap = new LockBitmap(Capture);
+                lockBitmap.LockBits();
+                Color c = lockBitmap.GetPixel(100, 100);
+                lockBitmap.UnlockBits();
+                //Log(string.Format("R:{0} G:{1} B:{2}", c.R, c.G, c.B));
+                Log(Setting.test.ToString());
                 Thread.Sleep(100);
             }
         }

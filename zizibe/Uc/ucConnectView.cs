@@ -18,6 +18,7 @@ namespace zizibe.Uc
         public static event EventHandler<LogEventArgs> OnLog;
 
         public AppInfo _info = new AppInfo();
+        public Settings _Setting;
 
         public int idx { get; set; }
         public IntPtr hWnd { get; set; }
@@ -28,6 +29,11 @@ namespace zizibe.Uc
         public ucConnectView()
         {
             InitializeComponent();
+
+        }
+        private void ucConnectView_Load(object sender, EventArgs e)
+        {
+            _Setting = new Settings(Name);
         }
 
         private void OnCapture(object sender, CaptureEventArgs e)
@@ -41,6 +47,40 @@ namespace zizibe.Uc
             });
             t.Start();
         }
+        private void SetBtnEnabled(SimpleButton btn, bool state)
+        {
+            btn.Invoke((MethodInvoker)(() =>
+            {
+                btn.Enabled = state;
+            }));
+        }
+        private void ConnectedState(LabelControl lbl, bool state)
+        {
+            lbl.Invoke((MethodInvoker)(() =>
+            {
+                if (state)
+                {
+                    lbl.BackColor = Color.Lime;
+                    lbl.ForeColor = Color.Black;
+                    lbl.Text = "Connected";
+                    _isConnect = true;
+                    Memory.Appinfo.Add(idx, _info);
+                }
+                else
+                {
+                    lbl.BackColor = Color.Red;
+                    lbl.ForeColor = Color.White;
+                    lbl.Text = "Not Connected";
+                    _isConnect = false;
+                    Memory.Appinfo.Remove(idx);
+                }
+            }));
+        }
+        private void Log(string log)
+        {
+            OnLog?.Invoke(this, new LogEventArgs(log));
+        }
+
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
@@ -76,41 +116,6 @@ namespace zizibe.Uc
             }
             //MessageBox.Show(Appinfo.hWnd.ToString()) ;
         }
-        
-        private void SetBtnEnabled(SimpleButton btn, bool state)
-        {
-            btn.Invoke((MethodInvoker)(() =>
-            {
-                btn.Enabled = state;
-            }));
-        }
-        private void ConnectedState(LabelControl lbl, bool state)
-        {
-            lbl.Invoke((MethodInvoker)(() =>
-            {
-                if (state)
-                {
-                    lbl.BackColor = Color.Lime;
-                    lbl.ForeColor = Color.Black;
-                    lbl.Text = "Connected";
-                    _isConnect = true;
-                    Memory.Appinfo.Add(idx, _info);
-                }
-                else
-                {
-                    lbl.BackColor = Color.Red;
-                    lbl.ForeColor = Color.White;
-                    lbl.Text = "Not Connected";
-                    _isConnect = false;
-                    Memory.Appinfo.Remove(idx);
-                }
-            }));
-        }
-        private void Log(string log)
-        {
-            OnLog?.Invoke(this, new LogEventArgs(log));
-        }
-
         private void btnStart_Click(object sender, EventArgs e)
         {
             if (_isConnect)
@@ -119,6 +124,7 @@ namespace zizibe.Uc
                 _info.idx = idx;
                 _info.hWnd = hWnd;
                 _info.Name = Name;
+                _info.Setting = _Setting; // 세팅 정보를 담음
 
                 _info.OnCapture += OnCapture;
 
@@ -129,8 +135,6 @@ namespace zizibe.Uc
                 SetBtnEnabled(btnStop, true);
             }
         }
-
-
         private void btnStop_Click(object sender, EventArgs e)
         {
             _info.OnCapture -= OnCapture;
@@ -140,5 +144,8 @@ namespace zizibe.Uc
             SetBtnEnabled(btnNowStart, true);
             SetBtnEnabled(btnStop, false);
         }
+
+
+
     }
 }

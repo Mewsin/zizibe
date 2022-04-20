@@ -101,7 +101,6 @@ namespace zizibe.Uc
                 ucConnectView.btnDel.Tag = Memory.ConnectControls.Count;
                 ucConnectView.hWnd = _lstAppinfo[lst.SelectedIndex].hWnd;
                 ucConnectView.Name = _lstAppinfo[lst.SelectedIndex].Name;
-                //ucConnectView.Appinfo = _lstAppinfo[lst.SelectedIndex];
 
 
 
