@@ -181,7 +181,7 @@ namespace zizibe.Uc
             this.btnStart.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Appearance.Options.UseFont = true;
             this.btnStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnStart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.ImageOptions.Image")));
             this.btnStart.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnStart.Location = new System.Drawing.Point(3, 3);
             this.btnStart.Name = "btnStart";
@@ -213,7 +213,7 @@ namespace zizibe.Uc
             this.btnStop.Appearance.Options.UseFont = true;
             this.btnStop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnStop.Enabled = false;
-            this.btnStop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnStop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.ImageOptions.Image")));
             this.btnStop.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnStop.Location = new System.Drawing.Point(243, 3);
             this.btnStop.Name = "btnStop";
