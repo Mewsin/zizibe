@@ -102,28 +102,14 @@ namespace zizibe.Uc
                 ucConnectView.hWnd = _lstAppinfo[lst.SelectedIndex].hWnd;
                 ucConnectView.Name = _lstAppinfo[lst.SelectedIndex].Name;
 
-
-
-
-                //if (Memory.ConnectControls.Count <= 3)
-                //{
-                //    foreach (var item in Memory.ConnectControls.Values)
-                //    {
-                //        if (item.lblTitle.Text == _lstAppinfo[lst.SelectedIndex].Name)
-                //        {
-                //            MessageBox.Show("이미 추가 된 플레이어 입니다.");
-                //            return;
-                //        }
-                //    }
-                //    Memory.ConnectControls.Add(Memory.ConnectControls.Count, ucConnectView);
-                //    tblScreen(tp);
-                //    lblList.Text = string.Format("추가 된 리스트 ( {0}개 )", Memory.ConnectControls.Count);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("4개 이상 추가 할 수 없습니다.");
-                //    return;
-                //}
+                foreach (var item in Memory.ConnectControls.Values)
+                {
+                    if (item.lblTitle.Text == _lstAppinfo[lst.SelectedIndex].Name)
+                    {
+                        MessageBox.Show("이미 추가 된 플레이어 입니다.");
+                        return;
+                    }
+                }
 
                 Memory.ConnectControls.Add(Memory.ConnectControls.Count, ucConnectView);
                 tblScreen(tp);

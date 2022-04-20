@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Controller.cs" />
     <Compile Include="Common\Events.cs" />
     <Compile Include="Common\Function.cs" />
     <Compile Include="Common\Memory.cs" />

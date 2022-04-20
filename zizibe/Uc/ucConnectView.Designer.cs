@@ -208,6 +208,7 @@ namespace zizibe.Uc
             superToolTip2.Items.Add(toolTipItem2);
             this.btnNowStart.SuperTip = superToolTip2;
             this.btnNowStart.TabIndex = 0;
+            this.btnNowStart.Click += new System.EventHandler(this.btnNowStart_Click);
             // 
             // btnStop
             // 

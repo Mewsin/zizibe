@@ -145,7 +145,9 @@ namespace zizibe.Uc
             SetBtnEnabled(btnStop, false);
         }
 
-
-
+        private void btnNowStart_Click(object sender, EventArgs e)
+        {
+            Controller.TEST(hWnd, 85, 220);
+        }
     }
 }
