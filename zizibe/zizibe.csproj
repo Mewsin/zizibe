@@ -57,7 +57,9 @@
     <Compile Include="Common\Memory.cs" />
     <Compile Include="Common\Structs.cs" />
     <Compile Include="Common\WinAPI.cs" />
+    <Compile Include="ETC\Benchmark.cs" />
     <Compile Include="ETC\CenterDialog.cs" />
+    <Compile Include="ETC\LockBitmap.cs" />
     <Compile Include="Frm\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
