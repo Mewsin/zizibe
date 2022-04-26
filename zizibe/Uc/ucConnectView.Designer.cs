@@ -48,7 +48,7 @@ namespace zizibe.Uc
             this.btnStart = new DevExpress.XtraEditors.SimpleButton();
             this.btnNowStart = new DevExpress.XtraEditors.SimpleButton();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSetting = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -165,7 +165,7 @@ namespace zizibe.Uc
             this.tableLayoutPanel2.Controls.Add(this.btnStart, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnNowStart, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnStop, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.simpleButton4, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSetting, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 327);
@@ -227,20 +227,21 @@ namespace zizibe.Uc
             this.btnStop.TabIndex = 0;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // simpleButton4
+            // btnSetting
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(342, 3);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(76, 41);
+            this.btnSetting.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Appearance.Options.UseFont = true;
+            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnSetting.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnSetting.Location = new System.Drawing.Point(342, 3);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(76, 41);
             toolTipItem4.Text = "설정";
             superToolTip4.Items.Add(toolTipItem4);
-            this.simpleButton4.SuperTip = superToolTip4;
-            this.simpleButton4.TabIndex = 0;
+            this.btnSetting.SuperTip = superToolTip4;
+            this.btnSetting.TabIndex = 0;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -348,7 +349,7 @@ namespace zizibe.Uc
         private DevExpress.XtraEditors.SimpleButton btnStart;
         private DevExpress.XtraEditors.SimpleButton btnNowStart;
         private DevExpress.XtraEditors.SimpleButton btnStop;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnSetting;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

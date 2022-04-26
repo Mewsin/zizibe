@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using zizibe.Common;
+using zizibe.Frm;
 using zizibe.Work;
 
 namespace zizibe.Uc
@@ -18,11 +19,11 @@ namespace zizibe.Uc
         public static event EventHandler<LogEventArgs> OnLog;
 
         public AppInfo _info = new AppInfo();
-        public Settings _Setting;
+        public Settings Setting = new Settings();
 
         public int idx { get; set; }
         public IntPtr hWnd { get; set; }
-        public string Name { get; set; }
+        public string name { get; set; }
 
         private bool _isConnect = false;
         public bool isConnect { get { return _isConnect; } }
@@ -33,7 +34,7 @@ namespace zizibe.Uc
         }
         private void ucConnectView_Load(object sender, EventArgs e)
         {
-            _Setting = new Settings(Name);
+            Setting.SettingLoad(name);
         }
 
         private void OnCapture(object sender, CaptureEventArgs e)
@@ -124,7 +125,7 @@ namespace zizibe.Uc
                 _info.idx = idx;
                 _info.hWnd = hWnd;
                 _info.Name = Name;
-                _info.Setting = _Setting; // 세팅 정보를 담음
+                _info.Setting = Setting; // 세팅 정보를 담음
 
                 _info.OnCapture += OnCapture;
 
@@ -148,6 +149,12 @@ namespace zizibe.Uc
         private void btnNowStart_Click(object sender, EventArgs e)
         {
             Controller.TEST(hWnd, 85, 220);
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            frmSettings frm = new frmSettings();
+            frm.ShowDialog();
         }
     }
 }

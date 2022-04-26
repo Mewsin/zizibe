@@ -10,9 +10,8 @@ namespace zizibe.Common
     {
         public int test { get; set; }
 
-        public Settings(string Name)
-        {
-            SettingLoad(Name);   
+        public Settings()
+        {  
         }
 
         public void SettingLoad(string Name)

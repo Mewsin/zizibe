@@ -22,6 +22,10 @@ namespace zizibe.Common
         private const uint WM_MOUSEMOVE = 0x0200;
         private const uint WM_LBUTTONDOWN = 0x0201;
         private const uint WM_LBUTTONUP = 0x0202;
+
+        private const uint WM_RBUTTONDOWN = 0X204;
+        private const uint WM_RBUTTONUP = 0X205;
+
         private const uint WM_KEYDOWN = 0x100;
         private const uint WM_MOUSEWHEEL = 0x020A;
         private const uint WM_KEYUP = 0x101;
@@ -63,7 +67,7 @@ namespace zizibe.Common
 
         public static void TEST(IntPtr hWnd, int X, int Y)
         {
-            int directionUp = 1;
+            //int directionUp = 1;
             int directionDown = -1;
 
             // Scrolls [Handle] down by 1/2 wheel rotation with Left Button pressed
